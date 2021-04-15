@@ -1,23 +1,23 @@
 import React from 'react';
 import './App.css';
-import FormularioCadastro from './components/FormularioCadastro/Formulario';
+import FormRegister from './components/FormRegister';
 import { Container, Typography } from '@material-ui/core';
 import 'fontsource-roboto';
-import { validarCPF, validarSenha } from './models/cadastro'
-import ValidacoesCadastro from './contexts/validacoesCadastro';
+import { cpfValidate, passwordValidate } from './models/registers'
+import registerValidations from './contexts/registerValidations';
 function App() {
   return (
     <Container component="article" maxWidth='sm'>
-      <Typography variant="h3" align="center" component="h1" >Formulario de Cadastro </Typography>
-      <ValidacoesCadastro.Provider value={{ cpf: validarCPF, senha: validarSenha, nome: validarSenha }}>
-        <FormularioCadastro aoEnviar={aoEnviarFormulario} />
-      </ValidacoesCadastro.Provider>
+      <Typography variant="h3" align="center" component="h1" >Simple Registration Form</Typography>
+      <registerValidations.Provider value={{ cpf: cpfValidate, password: passwordValidate, name: passwordValidate }}>
+        <FormRegister onSend={onSendForm} />
+      </registerValidations.Provider>
     </Container>
   );
 }
 
 
-function aoEnviarFormulario(dados) {
+function onSendForm(dados) {
   console.log(dados)
 }
 
