@@ -78,7 +78,7 @@ function PersonalData({ onSendOk }) {
       />
 
       <FormControlLabel
-        label="Promoções"
+        label="Promotions"
         control={
           <Switch
             name="promotions"
@@ -92,7 +92,7 @@ function PersonalData({ onSendOk }) {
       />
 
       <FormControlLabel
-        label="news"
+        label="News"
         control={
           <Switch
             name="news"

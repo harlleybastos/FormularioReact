@@ -40,7 +40,7 @@ function DataUser({ onSendOk }) {
         helperText={errors.password.text}
         required
         id="password"
-        label="password"
+        label="Password"
         name="password"
         type="password"
         variant="outlined"
